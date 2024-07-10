@@ -24,14 +24,14 @@ A PHP-based tool for generating customized text images on-the-fly. Create dynami
    git clone https://github.com/hlotiim/Dynamic-Placeholder-Image-Generator.git
    ```
 2. Ensure your web server is configured to run PHP scripts.
-3. Update the font file path in the `image_generator.php` script:
+3. Update the font file path in the `script.php` script:
    ```php
-   $fontFile = __DIR__ . '/path/to/your/Arial_Bold.ttf';
+   $fontFile = __DIR__ . 'arial.ttf';
    ```
 4. Create or update your `.htaccess` file in the root directory of your website with the following rewrite rule:
    ```apache
    RewriteEngine On
-   RewriteRule ^images/([^/]*)/([^/]*)/([^/]*)/([^/]*)/([^/]*)\.png$ image_generator.php?size=$1&bg=$2&fontcolor=$3&sizeandname=$4&text=$5 [L]
+   RewriteRule ^images/([^/]*)/([^/]*)/([^/]*)/([^/]*)/([^/]*)\.png$ script.php?size=$1&bg=$2&fontcolor=$3&sizeandname=$4&text=$5 [L]
    ```
 
 ## Usage
@@ -76,7 +76,7 @@ This will generate a 1200x900 image with a pink background (#f67280), white text
 
 ### Editing the Script
 
-You can customize the `image_generator.php` script to modify various aspects of the image generation:
+You can customize the `script.php` script to modify various aspects of the image generation:
 
 1. **Font**: Change the `$fontFile` variable to use a different TrueType font.
 2. **Text Wrapping**: Modify the `wordwrap()` function call to change how long text is wrapped.
